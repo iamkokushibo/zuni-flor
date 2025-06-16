@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Suscripción o Preguntas | Zuni Flor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #a88ebf, #6a4fa3);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #ffdee9;
+      outline: none;
+    }
+    nav.navbar {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: saturate(180%) blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .navbar .logo img {
+      width: 52px;
+      height: auto;
+      border-radius: 8px;
+      filter: drop-shadow(0 0 2px rgba(0,0,0,0.6));
+    }
+    .navbar .logo span {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #ffe5f2;
+      letter-spacing: 0.05em;
+      text-shadow:
+        0 0 5px #ff8ac7,
+        0 0 10px #ff5aa5,
+        0 0 20px #ff2d88,
+        0 0 30px #d8006c;
+    }
+    nav.navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav.navbar li a {
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      user-select: none;
+      text-shadow:
+        0 0 4px rgba(255, 255, 255, 0.6);
+    }
+    nav.navbar li a:focus-visible {
+      outline: 3px solid #ff89d4;
+      outline-offset: 2px;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem 1rem;
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: inset 0 -3px 10px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-size: 4rem;
+      margin: 0;
+      font-family: 'Great Vibes', cursive;
+      color: #ffcef5;
+      text-shadow:
+        0 0 7px #ff9de2,
+        0 0 15px #ff5aa5,
+        0 0 25px #d8006c;
+      user-select: none;
+    }
+    .intro-text {
+      max-width: 850px;
+      margin: 2rem auto 3rem auto;
+      font-size: 1.3rem;
+      line-height: 1.7;
+      background-color: rgba(255, 255, 255, 0.12);
+      padding: 2.5rem 3rem;
+      border-radius: 20px;
+      box-shadow:
+        0 0 20px rgba(255, 182, 242, 0.6);
+      text-align: center;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      user-select: text;
+      color: #fff5ff;
+      text-shadow: 0 0 4px #c273b4;
+    }
+    .form-container {
+      max-width: 720px;
+      margin: 0 auto 4rem auto;
+      background: linear-gradient(135deg, #f8defc, #d6b0f2);
+      padding: 3.5rem 4rem;
+      border-radius: 28px;
+      box-shadow:
+        0 8px 30px rgba(145, 79, 166, 0.55);
+      transition: box-shadow 0.4s ease;
+      color: #4a2e6e;
+      user-select: none;
+    }
+    .form-container:hover,
+    .form-container:focus-within {
+      box-shadow:
+        0 10px 45px rgba(196, 105, 204, 0.85);
+    }
+    .form-container h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 2.5rem;
+      font-family: 'Great Vibes', cursive;
+      color: #7e3bad;
+      text-shadow:
+        0 0 6px #b88cdf,
+        0 0 14px #9b44cc;
+      user-select: none;
+    }
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 2.5rem;
+    }
+    form label {
+      grid-column: span 2;
+      font-weight: 700;
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+      color: #652c91;
+      text-shadow:
+        0 0 4px #b88cdf;
+      user-select: text;
+      cursor: text;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      grid-column: span 2;
+      padding: 1.3rem 1.5rem;
+      font-size: 1.25rem;
+      border: 2.5px solid #a476d1;
+      border-radius: 16px;
+      outline-offset: 4px;
+      background-color: #fff;
+      color: #5a2e6a;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow:
+        inset 0 3px 6px rgba(164, 118, 209, 0.25);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      resize: vertical;
+      min-height: 150px;
+      user-select: text;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #8b3ab8;
+      box-shadow:
+        0 0 18px #b377e8;
+      background-color: #faf4ff;
+      outline: none;
+    }
+    /* Nombre y apellido en una sola fila */
+    input[name="nombre"] {
+      grid-column: 1 / 2;
+    }
+    input[name="apellido"] {
+      grid-column: 2 / 3;
+    }
+    button[type="submit"] {
+      grid-column: span 2;
+      padding: 1.4rem;
+      font-size: 1.5rem;
+      background: linear-gradient(45deg, #a74bcf, #7c30a4);
+      border: none;
+      border-radius: 18px;
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow:
+        0 5px 20px rgba(134, 55, 164, 0.75);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      text-shadow:
+        0 0 5px #e7a1ff;
+    }
+    button[type="submit"]:hover,
+    button[type="submit"]:focus-visible {
+      background: linear-gradient(45deg, #7c30a4, #5a2276);
+      box-shadow:
+        0 7px 30px rgba(91, 34, 128, 0.95);
+      outline: none;
+    }
+    /* Mensaje de éxito / error */
+    .form-message {
+      grid-column: span 2;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-top: 1.2rem;
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      display: none;
+      user-select: text;
+    }
+    .form-message.success {
+      color: #1f4e0f;
+      background-color: #d4edda;
+      box-shadow: 0 0 12px #1f4e0faa;
+      display: block;
+    }
+    .form-message.error {
+      color: #7a0b0b;
+      background-color: #f8d7da;
+      box-shadow: 0 0 12px #7a0b0baa;
+      display: block;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem 1.5rem;
+      font-size: 0.95rem;
+      color: #ddd;
+      background-color: rgba(0, 0, 0, 0.35);
+      box-shadow: inset 0 1px 8px rgba(255,255,255,0.1);
+      margin-top: auto;
+      user-select: none;
+    }
+    /* Responsive */
+    @media (max-width: 700px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+      input[name="nombre"],
+      input[name="apellido"] {
+        grid-column: span 1;
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea,
+      label,
+      button[type="submit"] {
+        font-size: 1.3rem;
+      }
+      .form-container h2 {
+        font-size: 2.7rem;
+      }
+      header h1 {
+        font-size: 3.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Menú principal">
+    <div class="logo">
+      <img src="https://www.zuniflor.com.do/assets/images/logoIcon/logo.png" alt="Logo de Zuni Flor" loading="lazy" />
+      <span>Zuni Flor</span>
+    </div>
+    <ul role="menubar">
+      <li role="none"><a role="menuitem" href="inicio.html" tabindex="0">Inicio</a></li>
+      <li role="none"><a role="menuitem" href="quienes somos.html" tabindex="0">Quiénes somos</a></li>
+      <li role="none"><a role="menuitem" href="productos.html" tabindex="0">Productos</a></li>
+      <li role="none"><a role="menuitem" href="ofertas.html" tabindex="0">Ofertas</a></li>
+      <li role="none"><a role="menuitem" href="Suscripción o preguntas.html" tabindex="0" aria-current="page">Suscripción o preguntas</a></li>
+    </ul>
+  </nav>
+
+  <header role="banner">
+    <h1>📬 ¡Contáctanos o Suscríbete! 🌼</h1>
+  </header>
+
+  <section class="intro-text" aria-label="Introducción">
+    <p>
+      En <strong>Zuni Flor</strong> valoramos cada mensaje. Ya sea para hacer una pregunta, dejarnos un comentario o recibir nuestras novedades florales, este es tu espacio. 💌✨
+      ¡Escríbenos y déjate florecer con nosotros!
+    </p>
+  </section>
+
+  <main role="main" class="form-container" aria-labelledby="contact-form-title">
+    <h2 id="contact-form-title">Formulario de contacto</h2>
+    <form id="contact-form" novalidate>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="given-name" minlength="2" maxlength="50" aria-required="true" />
+
+      <label for="apellido">Apellido</label>
+      <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required autocomplete="family-name" minlength="2" maxlength="50" aria-required="true" />
+
+      <label for="correo">Correo electrónico</label>
+      <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required autocomplete="email" aria-required="true" />
+
+      <label for="mensaje">Mensaje o pregunta</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje o pregunta aquí..." required minlength="15" maxlength="1000" aria-required="true"></textarea>
+
+      <button type="submit" aria-label="Enviar mensaje al equipo de Zuni Flor">Enviar mensaje</button>
+
+      <div role="alert" class="form-message" aria-live="polite" id="form-response"></div>
+    </form>
+  </main>
+
+  <footer role="contentinfo">
+    © 2025 Zuni Flor | Todos los derechos reservados
+  </footer>
+
+  <script>
+    // Validación básica y manejo del formulario (sin servidor)
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nombre = e.target.nombre.value.trim();
+      const apellido = e.target.apellido.value.trim();
+      const correo = e.target.correo.value.trim();
+      const mensaje = e.target.mensaje.value.trim();
+      const responseDiv = document.getElementById('form-response');
+
+      if (nombre.length < 2 || apellido.length < 2) {
+        responseDiv.textContent = "Por favor, ingresa un nombre y apellido válido.";
+        responseDiv.className = "form-message error";
+        return;
+      }
+
+      if (!correo.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        responseDiv.textContent = "Por favor, ingresa un correo electrónico válido.";
+        responseDiv.className = "form-message error";
+        return;
+      }
+
+      if (mensaje.length < 15) {
+        responseDiv.textContent = "El mensaje debe tener al menos 15 caracteres.";
+        responseDiv.className = "form-message error";
+        return;
+      }
+
+      responseDiv.textContent = "¡Gracias por contactarnos! Te responderemos pronto.";
+      responseDiv.className = "form-message success";
+
+      setTimeout(() => {
+        responseDiv.textContent = "";
+        responseDiv.className = "form-message";
+        e.target.reset();
+      }, 4000);
+    });
+  </script>
+</body>
+</html>

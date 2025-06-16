@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiénes Somos | Zuni Flor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: url('https://images.unsplash.com/photo-1725784055171-1888e4d61980?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      backdrop-filter: brightness(0.9);
+    }
+
+    nav.navbar {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      width: 50px;
+      margin-right: 10px;
+    }
+
+    .navbar .logo span {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      color: #fff;
+    }
+
+    nav.navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav.navbar li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 8px 16px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav.navbar li a:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #ffdee9;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-family: 'Great Vibes', cursive;
+      color: #fff0f5;
+      text-shadow: 0 0 10px #f5c1ff, 0 0 20px #f5c1ff;
+      animation: aparecer 1.5s ease;
+    }
+
+    .contenido {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 3rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .contenido section {
+      margin-bottom: 2.5rem;
+      animation: aparecer 1.3s ease-in-out;
+    }
+
+    .contenido h2 {
+      color: #ffd1ff;
+      font-size: 2.8rem;
+      padding-bottom: 0.5rem;
+      font-family: 'Great Vibes', cursive;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-shadow: 0 0 8px #f9a8d4, 0 0 12px #fbcfe8;
+      animation: brillo 3s infinite alternate;
+    }
+
+    .contenido h2::before {
+      content: "✨";
+      font-size: 1.8rem;
+    }
+
+    .contenido p {
+      font-size: 1.2rem;
+      line-height: 2;
+      color: #fefefe;
+      text-align: justify;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #ddd;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes brillo {
+      from {
+        text-shadow: 0 0 5px #f9a8d4, 0 0 10px #fbcfe8;
+      }
+      to {
+        text-shadow: 0 0 12px #ffe4f5, 0 0 22px #ffd1ff;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://www.zuniflor.com.do/assets/images/logoIcon/logo.png" alt="Zuni Flor Logo">
+      <span>Zuni Flor</span>
+    </div>
+    <ul>
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="quienes somos.html">Quiénes somos</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="ofertas.html">Ofertas</a></li>
+      <li><a href="suscripcion o pregunta.html">Suscripción o preguntas</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>¿Quiénes Somos?</h1>
+  </header>
+
+  <div class="contenido">
+    <section>
+      <h2>Historia</h2>
+      <p>Zuni Flor nació con el amor por la belleza natural. Fundada en el año 2010 en el corazón de la ciudad, nuestra floristería ha sido pionera en el diseño floral creativo y personalizado. Desde nuestros humildes inicios hasta convertirnos en un referente, hemos llevado sonrisas a miles de hogares. Cada arreglo que creamos cuenta una historia, y cada flor representa un sentimiento. Gracias al apoyo de nuestros fieles clientes, hoy somos una empresa consolidada que continúa creciendo con pasión y compromiso.</p>
+    </section>
+
+    <section>
+      <h2>Misión</h2>
+      <p>Brindar experiencias inolvidables a través de diseños florales de alta calidad, cuidando cada detalle con amor, profesionalismo y sensibilidad estética. Nos esforzamos por convertir cada pedido en una obra de arte viva que emocione y conecte.</p>
+    </section>
+
+    <section>
+      <h2>Visión</h2>
+      <p>Ser reconocidos como la floristería líder en innovación floral, destacándonos por nuestro servicio excepcional, creatividad vanguardista y respeto por el medio ambiente. Aspiramos a expandirnos sin perder nuestra esencia cercana y humana.</p>
+    </section>
+
+    <section>
+      <h2>Objetivos</h2>
+      <p>Nuestros principales objetivos son garantizar la satisfacción total de cada cliente, mantener altos estándares de calidad y puntualidad, fomentar el talento creativo de nuestro equipo y seguir siendo un ejemplo de excelencia en el arte floral.</p>
+    </section>
+
+    <section>
+      <h2>Valores</h2>
+      <p>Pasión por lo que hacemos, compromiso con cada entrega, respeto por la naturaleza, integridad en nuestras acciones, innovación constante y empatía hacia nuestros clientes. Estos valores definen cada paso que damos en Zuni Flor.</p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Zuni Flor. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>

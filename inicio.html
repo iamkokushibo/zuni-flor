@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zuni Flor - Inicio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@200;300;400;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #7e57c2, #b39ddb);
+      background-attachment: fixed;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
+      background: transparent;
+      backdrop-filter: blur(12px);
+      padding: 1em 2em;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-center img {
+      height: 50px;
+    }
+
+    nav.navbar {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    nav.navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav.navbar li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 8px 16px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav.navbar li a:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #ffdee9;
+    }
+
+    /* ===== ANIMACIONES INTRO SECUENCIA ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .intro {
+      text-align: center;
+      padding: 3em 1em 2em 1em;
+      overflow: hidden;
+    }
+
+    .intro h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4.2em;
+      color: #fff0fb;
+      margin-bottom: 0.5em;
+      text-shadow: 0 0 6px #ff9acb, 0 0 12px #f8bbd0, 0 0 20px rgba(255, 255, 255, 0.9);
+      letter-spacing: 1px;
+      filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.25));
+      animation: fadeUp 1s ease forwards;
+      opacity: 0;
+      animation-delay: 0.2s;
+    }
+
+    .intro p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #5d4037;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 1.2s;
+      margin-bottom: 1.5em;
+    }
+
+    .btn-suscribir {
+      background: #d81b60;
+      color: #fff;
+      padding: 0.8em 1.5em;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 2.2s;
+      box-shadow: 0 6px 15px rgba(216, 27, 96, 0.7);
+    }
+
+    .btn-suscribir:hover {
+      transform: scale(1.1);
+      background-color: #e91e63;
+      box-shadow: 0 8px 20px rgba(233, 30, 99, 0.8);
+    }
+
+    .contenido-dinamico {
+      margin: 3em auto;
+      padding: 2.5em 2em;
+      background: radial-gradient(circle at top left, #fff0fb, #fce4ec);
+      border: none;
+      border-radius: 25px;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      animation: fadeUp 1.2s ease forwards;
+      opacity: 0;
+      animation-delay: 0.3s;
+      transform: scale(1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .contenido-dinamico:hover {
+      transform: scale(1.02);
+    }
+
+    .contenido-dinamico h2 {
+      font-size: 2.5em;
+      color: #880e4f;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      margin-bottom: 1em;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      letter-spacing: 1.5px;
+      border-bottom: 4px double #d81b60;
+      display: inline-block;
+      padding-bottom: 0.3em;
+    }
+
+    .contenido-dinamico p {
+      font-size: 1.1em;
+      color: #6a1b9a;
+      line-height: 1.8em;
+      max-width: 700px;
+      margin: 0 auto;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contenido-dinamico p strong {
+      color: #ad1457;
+    }
+
+    .contenido-dinamico p em {
+      color: #4a148c;
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    .carrusel-section {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #5c3d8c, #3a1c5c);
+      overflow: hidden;
+      perspective: 1000px;
+    }
+
+    .carousel-container {
+      width: 600px;
+      height: 600px;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    .carousel {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      animation: spin 25s linear infinite;
+    }
+
+    .carousel img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 180px;
+      height: 180px;
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 5px solid #f8bbd0;
+      box-shadow: 0 0 20px rgba(216, 27, 96, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .carousel img:hover {
+      transform: translate(-50%, -50%) scale(1.2) translateZ(300px);
+      z-index: 10;
+    }
+
+    .carousel img:nth-child(1) { transform: translate(-50%, -50%) rotateY(0deg) translateZ(300px); }
+    .carousel img:nth-child(2) { transform: translate(-50%, -50%) rotateY(60deg) translateZ(300px); }
+    .carousel img:nth-child(3) { transform: translate(-50%, -50%) rotateY(120deg) translateZ(300px); }
+    .carousel img:nth-child(4) { transform: translate(-50%, -50%) rotateY(180deg) translateZ(300px); }
+    .carousel img:nth-child(5) { transform: translate(-50%, -50%) rotateY(240deg) translateZ(300px); }
+    .carousel img:nth-child(6) { transform: translate(-50%, -50%) rotateY(300deg) translateZ(300px); }
+
+    @keyframes spin {
+      from { transform: rotateY(0deg); }
+      to   { transform: rotateY(360deg); }
+    }
+
+    footer {
+      padding: 2em;
+      background-color: #f8bbd0;
+      color: #4b2e2e;
+      text-align: center;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-center">
+      <img src="https://www.zuniflor.com.do/assets/images/logoIcon/logo.png" alt="Zuni Flor">
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="quienes somos.html">Quiénes somos</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+       <li><a href="suscripcion o pregunta.html">Suscripción o preguntas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <h1>Bienvenido a Zuni Flor</h1>
+    <p>Flores que hablan por ti. Arreglos elegantes, naturales y perfectos para cada ocasión.</p>
+    <button class="btn-suscribir" onclick="irASuscripcion()">Suscribirse</button>
+  </section>
+
+  <section class="contenido-dinamico">
+    <h2>🌸 Servicios Exclusivos Zuni Flor</h2>
+    <p>
+      En <strong>Zuni Flor</strong>, te ofrecemos más que flores: brindamos <em>emociones convertidas en arte floral</em>. Desde bodas de ensueño hasta elegantes eventos corporativos, cada diseño es una obra maestra. Nos apasiona superar expectativas con arreglos <em>personalizados y sofisticados</em> elaborados con flores premium y atención al detalle. Disfruta de una atención cálida, entrega impecable y un toque profesional que transforma cada ocasión en un recuerdo inolvidable.
+    </p>
+  </section>
+
+  <section class="carrusel-section">
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="https://fafulflorist.com/cdn/shop/products/red-rose-50-stems-fresh-flowers-roses-fafulflorist-424862.jpg?v=1706588753&width=1445" alt="Flor 1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnjky6s-SXj2SzeQlyE3VzZm6rgnqe95kIgA&s" alt="Flor 2">
+        <img src="https://www.elegantweddinginvites.com/wedding-blog/wp-content/uploads/2015/08/breathtaing-wedding-reception-ideas-with-candle-floating-centerpieces.jpg?weddmobile?bl20" alt="Flor 3">
+        <img src="https://pink-flowers.com/cdn/shop/files/084537DC-CC6A-45E9-B4C8-1C06960CE113.jpg?v=1698346977&width=1445" alt="Flor 4">
+        <img src="https://asset.bloomnation.com/c_pad,d_vendor:global:catalog:product:image.png,f_auto,fl_preserve_transparency,q_auto/v1744198838/vendor/7370/catalog/product/2/0/20190926060156_file_5d8cfd14666f9_5d8cfd43bb130.jpeg" alt="Flor 5">
+        <img src="https://montrealbaskets.ca/cdn/shop/files/Potted_Plants_Footer_2.jpg?v=1709315929&width=1600" alt="Flor 6">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Zuni Flor. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function irASuscripcion() {
+      window.location.href = "suscripcion o pregunta.html";
+    }
+  </script>
+</body>
+</html>

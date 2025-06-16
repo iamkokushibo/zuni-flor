@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | Zuni Flor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+     background:  url('https://cdn.pixabay.com/photo/2019/09/17/06/52/purple-pageantry-winds-4482653_1280.jpg') no-repeat center center fixed;
+     background-attachment: fixed; 
+      background-size: cover;
+      color: #fff;
+    }
+
+    nav.navbar {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      width: 70px;
+      margin-right: 10px;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6));
+    }
+
+    .navbar .logo span {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #fff;
+      text-shadow: 0 0 3px #ffb3ec;
+    }
+
+    nav.navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav.navbar li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav.navbar li a:hover {
+      color: #ffdee9;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+   header h1 {
+  font-size: 4.5rem;
+  margin: 0;
+  font-family: 'Great Vibes', cursive;
+  color: #fff0fb;
+  text-shadow: 
+    0 0 8px #ffb3ec, 
+    0 0 14px #f9c6ff, 
+    0 0 20px rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease-in-out;
+}
+
+    header h1::before,
+    header h1::after {
+      content: "🌸";
+      margin: 0 10px;
+    }
+
+    .descripcion {
+      text-align: center;
+      max-width: 850px;
+      margin: 2rem auto;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #fdfdfd;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
+    }
+
+    .galeria-productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .producto {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .producto:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .producto h3 {
+      margin: 1rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #ffd1ff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #eee;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://www.zuniflor.com.do/assets/images/logoIcon/logo.png" alt="Zuni Flor Logo">
+      <span>Zuni Flor</span>
+    </div>
+    <ul>
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="quienes somos.html">Quiénes somos</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="ofertas.html">Ofertas</a></li>
+      <li><a href="suscripcion o pregunta.html">Suscripción o preguntas</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Bienvenido a Nuestros Productos</h1>
+  </header>
+
+  <div class="descripcion">
+    En Zuni Flor, cada producto es una expresión de amor, alegría y arte. Nuestros arreglos florales están diseñados con esmero, combinando elegancia y frescura para cada ocasión. Descubre una selección exclusiva hecha con pasión y profesionalismo.
+  </div>
+
+  <div class="galeria-productos">
+    <div class="producto"><img src="https://wallpapers.com/images/featured/ramo-de-rosas-z6k2wvy5omqzxc0o.jpg" alt="Producto 1"><h3>Ramo Primavera</h3></div>
+    <div class="producto"><img src="https://tavola.es/140-large_default/centro-de-mesa-con-flor-variada.jpg" alt="Producto 2"><h3>Centro de Mesa</h3></div>
+    <div class="producto"><img src="https://www.hola.com/horizon/square/7a0eb87ba394-adobestock436265223.jpg" alt="Producto 3"><h3>Orquídeas Elegantes</h3></div>
+    <div class="producto"><img src="https://i5.walmartimages.com/asr/990025bf-dd1c-441f-b29e-0cf4100a4f30.a3e73b655139bd7b8644faa55f695084.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Producto 4"><h3>Florero Vintage</h3></div>
+    <div class="producto"><img src="https://lidiafloreria.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-28-at-4.48.16-AM-scaled.jpeg" alt="Producto 5"><h3>Rosas Eternas</h3></div>
+    <div class="producto"><img src="https://i.pinimg.com/1200x/93/a2/66/93a26621f8d4dfcadf073d3f3e7f086c.jpg" alt="Producto 6"><h3>Jardín en Caja</h3></div>
+    <div class="producto"><img src="https://png.pngtree.com/thumb_back/fw800/background/20241028/pngtree-a-stunning-floral-arrangement-with-variety-of-flowers-in-shades-red-image_16460061.jpg" alt="Producto 7"><h3>Arreglo Tropical</h3></div>
+    <div class="producto"><img src="https://espacioflores.com/wp-content/uploads/2020/07/shop-aromaticas-1200-01.jpg" alt="Producto 8"><h3>Cesta Aromática</h3></div>
+    <div class="producto"><img src="https://st.depositphotos.com/2355249/2571/i/450/depositphotos_25713683-stock-photo-bouquet-of-flowers-in-a.jpg" alt="Producto 9"><h3>Decoración de Boda</h3></div>
+    <div class="producto"><img src="https://cdn2.eminza.com/uploads/cache/blog_mea_mobile_retina/uploads/media/64e6187bf10fa/couronne-de-noel-naturelle.jpg" alt="Producto 10"><h3>Coronas Naturales</h3></div>
+    <div class="producto"><img src="https://img.freepik.com/foto-gratis/hermosa-composicion-floral_23-2150969065.jpg?semt=ais_hybrid&w=740" alt="Producto 11"><h3>Arreglo Silvestre</h3></div>
+    <div class="producto"><img src="https://thumbs.dreamstime.com/b/fondo-de-pared-rosas-flores-naturales-boda-rosadas-flor-rosa-fresco-natural-y-amor-rom%C3%A1ntico-194443517.jpg" alt="Producto 12"><h3>Bouquet Rosado</h3></div>
+    <div class="producto"><img src="https://s0.smartresize.com/wallpaper/877/738/HD-wallpaper-vase-flowers-soft-abstract.jpg" alt="Producto 13"><h3>Florero Minimalista</h3></div>
+    <div class="producto"><img src="https://static.vecteezy.com/system/resources/thumbnails/065/313/911/small/fresh-aromatic-herbs-arrangement-on-rustic-fabric-for-culinary-themes-photo.jpeg" alt="Producto 14"><h3>Mix Aromático</h3></div>
+    <div class="producto"><img src="https://p4.wallpaperbetter.com/wallpaper/286/820/36/love-flowers-photo-romance-wallpaper-preview.jpg" alt="Producto 15"><h3>Delicado Romance</h3></div>
+    <div class="producto"><img src="https://img.freepik.com/fotos-premium/flores-de-primavera-fundo-natural-ia-generativa_115919-4897.jpg" alt="Producto 16"><h3>Ramo Fantasía</h3></div>
+  </div>
+
+  <footer>
+    © 2025 Zuni Flor | Todos los derechos reservados
+  </footer>
+</body>
+</html>

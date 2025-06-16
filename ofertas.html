@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ofertas | Zuni Flor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, rgba(255, 240, 245, 0.4), rgba(255, 192, 203, 0.3)), url('https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512_960_720.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      backdrop-filter: brightness(0.9);
+    }
+
+    nav.navbar {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px) saturate(180%);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      animation: fadeInDown 1s ease;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      width: 50px;
+      margin-right: 10px;
+    }
+
+    .navbar .logo span {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      color: #fff;
+      text-shadow: 0 0 6px #f8b4d8;
+    }
+
+    nav.navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav.navbar li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav.navbar li a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background-color: #ffdee9;
+      transition: width 0.3s ease;
+    }
+
+    nav.navbar li a:hover {
+      color: #ffdee9;
+    }
+
+    nav.navbar li a:hover::after {
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(0, 0, 0, 0.4);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      animation: fadeIn 2s ease;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-family: 'Great Vibes', cursive;
+      color: #ffe5f2;
+      text-shadow: 0 0 10px #f9a8d4, 0 0 20px #fbcfe8;
+      animation: pulse 4s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% {
+        text-shadow: 0 0 8px #f9a8d4, 0 0 16px #fbcfe8;
+      }
+      100% {
+        text-shadow: 0 0 18px #ffe4f5, 0 0 28px #ffd1ff;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .descripcion {
+      text-align: center;
+      max-width: 900px;
+      margin: 2rem auto;
+      font-size: 1.25rem;
+      color: #fdfdfd;
+      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.15));
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+      animation: fadeIn 2s ease;
+    }
+
+    .galeria-ofertas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      animation: fadeIn 2s ease;
+    }
+
+    .oferta {
+      background: linear-gradient(160deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .oferta:hover {
+      transform: scale(1.06);
+      box-shadow: 0 10px 24px rgba(255, 255, 255, 0.3);
+    }
+
+    .oferta img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      filter: brightness(1.1);
+      transition: transform 0.4s ease;
+    }
+
+    .oferta:hover img {
+      transform: scale(1.08);
+    }
+
+    .oferta h3 {
+      margin: 1rem 0 0.5rem 0;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #ffd1ff;
+      text-shadow: 0 0 6px #fbcfe8;
+    }
+
+    .oferta p {
+      margin: 0 0 1.2rem 0;
+      font-size: 1.3rem;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+      color: #eee;
+      background: rgba(0, 0, 0, 0.4);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      animation: fadeIn 2s ease;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://www.zuniflor.com.do/assets/images/logoIcon/logo.png" alt="Zuni Flor Logo">
+      <span>Zuni Flor</span>
+    </div>
+    <ul>
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="quienes somos.html">Quiénes somos</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="ofertas.html">Ofertas</a></li>
+      <li><a href="suscripcion o pregunta.html">Suscripción o preguntas</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>🌸 ¡Bienvenido a nuestras Ofertas! 🌸</h1>
+  </header>
+
+  <div class="descripcion">
+    En <strong>Zuni Flor</strong> estamos encantados de ofrecerte momentos florales a precios especiales. Aquí descubrirás creaciones elegantes, coloridas y con mucho corazón. Cada oferta fue seleccionada pensando en ti, para llenar de frescura tus espacios o regalar sonrisas inolvidables. 💐🌟 ¡No te las pierdas!
+  </div>
+
+  <div class="galeria-ofertas">
+    <div class="oferta"><img src="https://i.pinimg.com/236x/fb/87/e1/fb87e1790a79e6c4534dcfee03f6432d.jpg" alt="Oferta 1"><h3>Rosas de Ensueño</h3><p>RD$ 5,000</p></div>
+    <div class="oferta"><img src="https://m.media-amazon.com/images/I/71iZt9FXSvL.jpg" alt="Oferta 2"><h3>Mini Jardín Zen</h3><p>RD$ 7,500</p></div>
+    <div class="oferta"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt_L8usH2PS1ZgFZZMrsucIYAeUCk07OopTw&s" alt="Oferta 3"><h3>Arreglo Colorido</h3><p>RD$ 15,000</p></div>
+    <div class="oferta"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZIAi4d_j0qGxuFxvompNdFFJutun775FBK9UliBjeKbppYxpIAO3ncCHc99ReU_O0l5k&usqp=CAU" alt="Oferta 4"><h3>Centro de Mesa</h3><p>RD$ 150,000</p></div>
+    <div class="oferta"><img src="https://img.freepik.com/fotos-premium/ramo-tulipanes-rosados-fondo-blanco_1105604-73854.jpg" alt="Oferta 5"><h3>Ramo de Tulipanes</h3><p>RD$ 9,000</p></div>
+    <div class="oferta"><img src="https://img.freepik.com/foto-gratis/vista-lateral-composicion-flores-mixtas_140725-9143.jpg?semt=ais_hybrid&w=740" alt="Oferta 6"><h3>Caja Floral Elegante</h3><p>RD$ 11,000</p></div>
+    <div class="oferta"><img src="https://img.pikbest.com/wp/202408/green-tea-flower-organic-herbal-detox-a-delightful-blend-of-calendula-cornflower-and-blue-petals_9978701.jpg!w700wp" alt="Oferta 7"><h3>Mix Aromático</h3><p>RD$ 7,000</p></div>
+    <div class="oferta"><img src="https://i5.walmartimages.com/asr/868408db-7b82-48b5-902b-d96997589cd9.d4c7c437c92cd4fd700d268b17908477.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF&format=avif" alt="Oferta 8"><h3>Decoración Romántica</h3><p>RD$ 9,500</p></div>
+  </div>
+
+  <footer>
+    © 2025 Zuni Flor | Todos los derechos reservados
+  </footer>
+</body>
+</html>
